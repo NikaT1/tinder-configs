@@ -8,7 +8,7 @@ spring:
 
   kafka:
     bootstrap-servers:
-      - PLAINTEXT://kafka:19092
+      - PLAINTEXT://kafka:9092
     consumer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
