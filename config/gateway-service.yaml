@@ -34,6 +34,26 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka-service:8761/eureka/
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    urls:
+      - name: gateway-service
+        url: /v3/api-docs
+      - name: auth-service
+        url: /auth-api-service/v3/api-docs
+      - name: location-service
+        url: /location-api-service/v3/api-docs
+      - name: user-data-service
+        url: /user-data-api-service/v3/api-docs
+      - name: spacesuit-service
+        url: /spacesuit-api-service/v3/api-docs
+      - name: fabric-texture-service
+        url: /fabric-texture-service/v3/api-docs
+
 management:
   endpoints:
     web:

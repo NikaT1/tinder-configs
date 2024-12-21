@@ -2,6 +2,8 @@ server:
   port: 8184
   forward-headers-strategy: framework
 spring:
+  main:
+    allow-bean-definition-overriding: true
   kafka:
     bootstrap-servers:
       - PLAINTEXT://kafka:9092
