@@ -1,0 +1,32 @@
+server:
+  port: 8185
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: events-analytics-service
+
+  kafka:
+    bootstrap-servers:
+      - PLAINTEXT://kafka:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      spacesuit-request-changed-topic: "spacesuit-request-changed"
+      spacesuit-request-created-topic: "spacesuit-request-created"
+      profile-image-created-topic: "profile-image-created"
+      profile-image-deleted-topic: "profile-image-deleted"
+      user-created-topic: "user-created"
+      user-deleted-topic: "user-deleted"
+    properties:
+      spring.json.trusted.packages: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-service:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
