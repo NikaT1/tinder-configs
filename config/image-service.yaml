@@ -10,7 +10,7 @@ minio:
   url: http://localhost:9000
   accessKey: tinder
   secretKey: tindertinder
-  bucket-name: profileImages
+  bucket-name: profile-images
 
 eureka:
   client:
